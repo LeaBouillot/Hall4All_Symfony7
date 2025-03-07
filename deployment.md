@@ -1,6 +1,6 @@
 **Voici les étapes détaillées pour déployer mon projet Symfony sur Hostinger :**
 
-1. **Préparer le projet Symfony CandiMate**
+1. **Préparer le projet Symfony**
 
    - Installez les dépendances : j’ai exécuté `composer install --no-dev --optimize-autoloader` pour installer les dépendances sans les paquets de développement.
 
@@ -97,7 +97,7 @@
    - Ce fichier sert à rediriger le site vers `index.php` du dossier `public`, qui effectuera ensuite le routage des requêtes dans Symfony.
    - À l’intérieur du dossier `public`, ce fichier `.htaccess` gère la réécriture des URL, la gestion des paramètres PHP, la configuration des pages d’erreur personnalisées et la mise en cache des ressources.
 
-5. **Télécharger les fichiers de CandiMate**
+5. **Télécharger les fichiers**
 
    - Dans le hPanel, dans la section « Gestionnaire de fichiers », j’ai téléchargé le fichier ZIP du projet CandiMate dans le répertoire `public_html`.
    - J’ai utilisé l'option "Extraire" pour décompresser tous les fichiers dans le répertoire `public_html`.
