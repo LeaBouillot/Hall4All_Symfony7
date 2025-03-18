@@ -1,5 +1,0 @@
-DATABASE_URL="mysql://root@127.0.0.1:3306/db_hall_management?serverVersion=8.0.32&charset=utf8mb4"
-# Looking to send emails in production? Check out our Email API/SMTP product!
-MAILER_DSN="smtp://b7dc93b7d964c1:3d50c45f071c59@sandbox.smtp.mailtrap.io:2525"
-STRIPE_API_PK=pk_test_51KltkGDEBqijHsAmGBBf1N87kcFlSWr9rfXbmodZC1kPCvnpkOQmBuu3pXsl34UorKBF3U5Df8trZ3PDE8pSwyIJ00YVr32Bd5
-STRIPE_API_SK=sk_test_51KltkGDEBqijHsAmi00vC2n0OErlGsuUVDj5uqtPLhptQ1SyGMNW46EZxA16VOyNmbQPFxq0PHNkzgoqmacVAc6h0035b7ypdR
