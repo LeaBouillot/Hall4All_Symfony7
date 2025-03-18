@@ -1,3 +1,5 @@
+Symfony project in a group of 3, with tenyega and ArobaseDev
+
 CREATING NEW WEB PROJECT SYMFONY
 symfony new gestion_salle --webapp
 
