@@ -2,20 +2,18 @@
 
 1. **Préparer le projet Symfony**
 
-   - Installez les dépendances : j’ai exécuté `composer install --no-dev --optimize-autoloader` pour installer les dépendances sans les paquets de développement.
-
 2. **Configurer la base de données**
 
    - Créez une base de données : Dans le hPanel, dans la section "Bases de données MySQL", j’ai créé une nouvelle base de données.
-   - Dans phpMyAdmin, j’ai copié l’information suivante `serverVersion=10.11.10-MariaDB` pour l’ajouter plus tard dans le fichier `.env`.
-   - J’ai importé le fichier `db_candimate.sql`.
+   - Dans phpMyAdmin, j’ai copié l’information suivante `serverVersion=xxx` pour l’ajouter plus tard dans le fichier `.env`.
+   - J’ai importé le fichier `db.sql`.
 
 3. **Mettre à jour le fichier `.env`**
 
    - Modifiez le fichier `.env` de votre projet Symfony pour inclure les informations de connexion à la base de données :
 
    ```
-   DATABASE_URL="mysql://username:password@host/database_name?serverVersion=10.11.10-MariaDB&charset=utf8mb4"
+   DATABASE_URL="mysql://username:password@ip_host/database_name?serverVersion=10.11.10-MariaDB&charset=utf8mb4"
    ```
 
    Exemple de ce que vous pourriez avoir dans le fichier `.env` :
@@ -24,8 +22,7 @@
    APP_ENV=prod
    APP_DEBUG=false
    APP_SECRET="943a1812345...."
-   DATABASE_URL="mysql://username:password@host/database_name?serverVersion=10.11.10-MariaDB&charset=utf8mb4"
-   GEMINI_API_KEY="AIzaSy..."
+    DATABASE_URL="mysql://username:password@127.0.0.1:3306/database_name?serverVersion=10.11.10-MariaDB&charset=utf8mb4"
    MAILER_DSN="smtp://..."
    ```
 
@@ -106,15 +103,15 @@
 
    - **Permissions des répertoires** : Assurez-vous que les répertoires `var` et `public` ont les bonnes permissions pour que le serveur web puisse y accéder. Vous pouvez utiliser le Gestionnaire de fichiers ou exécuter des commandes via SSH.
 
-   - **Accès SSH** : J’ai copié la ligne de commande suivante pour me connecter en SSH :
-
-   ```
-   ssh -p 6512345678
-   ```
-
 7. **Sur mon terminal** :
+    - Je me suis connecté en SSH à l’hébergeur en utilisant la connexion SSH fournie par Hostinger, puis j’ai entré le mot de passe de la base de données que j’ai défini.
+  
+   - **Accès SSH sur Hostinger** : J’ai copié la ligne de commande suivante pour me connecter en SSH :
 
-   - Je me suis connecté en SSH à l’hébergeur en utilisant la connexion SSH fournie par Hostinger, puis j’ai entré le mot de passe de la base de données que j’ai défini.
+   ```
+   ssh -p 6512345678xxxx
+   password: 23Freexxxxx
+   ```
    - Ensuite, j’ai lancé la commande suivante pour modifier les permissions du dossier `public_html` :
 
    ```
@@ -129,24 +126,14 @@
    php composer-setup.php
    php -r "unlink('composer-setup.php');"
    ```
-
-   - Pour utiliser Composer :
-
-   ```
-   php composer.phar
-   ```
-
    - ajout de ce code pour afficher l'erreur au niveau de PHP qui n'était pas visible auparavant avec l'incompatibilité des versions php php_value display_errors 1 :
-
    ```
    php_value display_startup_errors 1
    ```
-
    - installation de toutes les dépendances via git bash (connexion via ssh)
 
    ```
-    install --no-dev --optimize-autoloader
-    php bin/console cache:clear
+    php composer.phar install --no-dev --optimize-autoloader
    ```
 
 8. **Vérifier le déploiement**
